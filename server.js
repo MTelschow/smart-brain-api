@@ -7,7 +7,6 @@ import handleRegister from './constrollers/register.js';
 import handleSignin from './constrollers/signin.js';
 import handleProfil from './constrollers/profil.js';
 import {
-	returnClarifyRequestOptions,
 	handleApiCall,
 	handleImage,
 } from './constrollers/image.js';
