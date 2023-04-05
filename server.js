@@ -6,7 +6,11 @@ import knex from 'knex';
 import handleRegister from './constrollers/register.js';
 import handleSignin from './constrollers/signin.js';
 import handleProfil from './constrollers/profil.js';
-import handleImage from './constrollers/image.js';
+import {
+	returnClarifyRequestOptions,
+	handleApiCall,
+	handleImage,
+} from './constrollers/image.js';
 
 const db = knex({
 	client: 'pg',
@@ -35,6 +39,8 @@ app.post('/register', (req, res) => handleRegister(req, res, db, bcrypt));
 app.get('/profil/:id', (req, res) => handleProfil(req, res, db));
 
 app.put('/image', (req, res) => handleImage(req, res, db));
+
+app.post('/imageurl', (req, res) => handleApiCall(req, res));
 
 app.listen(3000, () => {
 	console.log('App is running on port 3000');
