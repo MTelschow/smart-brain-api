@@ -1,3 +1,5 @@
+import fetch from "node-fetch";
+
 const returnClarifyRequestOptions = (imgUrl) => {
 	// Your PAT (Personal Access Token) can be found in the portal under Authentification
 	const PAT = 'ac3d35e0d8dc4d1bbee253f30514c1c6';
