@@ -11,12 +11,13 @@ import { handleApiCall, handleImage } from './constrollers/image.js';
 const db = knex({
 	client: 'pg',
 	connection: {
+		connectionString: 'postgres://mydb_nbsh_user:XKkBGwcdEI4igEOr139Fs0vmmukF2ite@dpg-cgn6usl269v6fnt7hl70-a/mydb_nbsh',
 		ssl: { rejectUnauthorized: false },
-		host: '127.0.0.1',
-		user: 'mathistelschow',
+		host: 'dpg-cgn6usl269v6fnt7hl70-a',
 		port: '5432',
-		password: '',
-		database: 'smart-brain',
+		user: 'mydb_nbsh_user',
+		password: 'XKkBGwcdEI4igEOr139Fs0vmmukF2ite',
+		database: 'mydb_nbsh',
 	},
 });
 
