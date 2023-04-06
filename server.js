@@ -8,16 +8,24 @@ import handleSignin from './constrollers/signin.js';
 import handleProfil from './constrollers/profil.js';
 import { handleApiCall, handleImage } from './constrollers/image.js';
 
+const {
+	DATABASE_URL,
+	DATABASE_HOST,
+	DATABSE_USER,
+	DATABASE_PASSWORD,
+	DATABASE_DATABASE,
+} = process.env;
+
 const db = knex({
 	client: 'pg',
 	connection: {
-		connectionString: 'postgres://mydb_nbsh_user:XKkBGwcdEI4igEOr139Fs0vmmukF2ite@dpg-cgn6usl269v6fnt7hl70-a/mydb_nbsh',
+		connectionString: DATABASE_URL,
 		ssl: { rejectUnauthorized: false },
-		host: 'dpg-cgn6usl269v6fnt7hl70-a',
+		host: DATABASE_HOST,
 		port: '5432',
-		user: 'mydb_nbsh_user',
-		password: 'XKkBGwcdEI4igEOr139Fs0vmmukF2ite',
-		database: 'mydb_nbsh',
+		user: DATABSE_USER,
+		password: DATABASE_PASSWORD,
+		database: DATABASE_DATABASE,
 	},
 });
 
